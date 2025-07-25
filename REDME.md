@@ -37,7 +37,7 @@ cd sentiment-analyzer
 
 #2. Установи зависимости
 pip install -r requirements.txt
-
+python download_model.py
 #3. Убедись, что у тебя есть модели
 
 Положи модели в папку model_files/:
