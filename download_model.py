@@ -8,6 +8,31 @@ FILE_ID = "1Indcjd8TfgPFMpV03wWUo13vhcqhwjIW"
 ZIP_PATH = "model.zip"
 MODEL_DIR = "model_files"
 
+# === Инструкция по получению ngrok authtoken ===
+README_INSTRUCTIONS = """
+## 🔐 Как получить ngrok authtoken
+
+### 📌 Шаг 1. Перейдите на сайт https://ngrok.com/
+
+### 📌 Шаг 2. Зарегистрируйтесь или войдите в аккаунт
+- Можно использовать Google, GitHub или email.
+
+### 📌 Шаг 3. Получите токен
+1. Перейдите в раздел: https://dashboard.ngrok.com/get-started/setup
+2. Скопируйте токен из команды вида:
+   ```bash
+   ngrok config add-authtoken <ваш_токен>
+   ```
+3. Вставьте токен в свой код:
+   ```python
+   from pyngrok import ngrok
+   ngrok.set_auth_token("ВАШ_ТОКЕН")
+   ```
+
+### ✅ Готово! Теперь ngrok будет работать без ограничений.
+"""
+
+
 def clean_previous(zip_path=ZIP_PATH, model_dir=MODEL_DIR):
     if os.path.exists(zip_path):
         os.remove(zip_path)
@@ -33,3 +58,4 @@ if __name__ == "__main__":
     clean_previous()
     download_model()
     extract_model_zip()
+    print(README_INSTRUCTIONS)
