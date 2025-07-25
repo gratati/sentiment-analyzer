@@ -1,0 +1,16 @@
+## 📁 `.gitignore`
+
+venv/ env/ pycache  *.pyc
+
+Модели ML (если тяжёлые)
+
+model_files/
+
+
+*.log logs/ *.env
+
+Streamlit
+
+.streamlit/secrets.toml
+
+.DS_Store Thumbs.db
